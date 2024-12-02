@@ -1,9 +1,25 @@
-import React from 'react'
+// Button.jsx
+import React from 'react';
 
-export default function Button({text, handleClick}) {
-  return (
-    <a href="#" className="f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4" onClick={handleClick}>
-      <span className="pl1">{text}</span>
-    </a>
-  )
-}
+const Button = ({ text, handleClick }) => (
+  <button
+    onClick={handleClick}
+    style={{
+      cursor: 'pointer', // Ensures the cursor changes to a pointer
+      padding: '10px 20px',
+      backgroundColor: '#007bff',
+      color: '#fff',
+      border: 'none',
+      borderRadius: '4px',
+      fontSize: '14px',
+      margin: '0 5px',
+      transition: 'background-color 0.3s',
+    }}
+    onMouseOver={(e) => (e.target.style.backgroundColor = '#0056b3')}
+    onMouseOut={(e) => (e.target.style.backgroundColor = '#007bff')}
+  >
+    {text}
+  </button>
+);
+
+export default Button;
